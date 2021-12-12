@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-class FirstArticle extends React.Component {
+class ThirdArticle extends React.Component {
     constructor(props) {
         super(props);
 
@@ -20,19 +20,19 @@ class FirstArticle extends React.Component {
     componentDidMount() {
         // Simple GET request using axios
         axios.get('https://www.jalirani.com/files/barstool.json') //title
-            .then(response => this.setState({ title: response.data[0].title}));
+            .then(response => this.setState({ title: response.data[2].title}));
         axios.get('https://www.jalirani.com/files/barstool.json') //img1A
-            .then(response => this.setState({ img1A: response.data[0].thumbnail.location}));
+            .then(response => this.setState({ img1A: response.data[2].thumbnail.location}));
         axios.get('https://www.jalirani.com/files/barstool.json') //img1B
-            .then(response => this.setState({ img1B: response.data[0].thumbnail.images.medium}));
+            .then(response => this.setState({ img1B: response.data[2].thumbnail.images.medium}));
         axios.get('https://www.jalirani.com/files/barstool.json') //author
-            .then(response => this.setState({ author: response.data[0].author.name}));
+            .then(response => this.setState({ author: response.data[2].author.name}));
         axios.get('https://www.jalirani.com/files/barstool.json') //author avatar
-            .then(response => this.setState({ avatar: response.data[0].author.avatar}));
+            .then(response => this.setState({ avatar: response.data[2].author.avatar}));
         axios.get('https://www.jalirani.com/files/barstool.json') //url
-            .then(response => this.setState({ url: response.data[0].url}));
+            .then(response => this.setState({ url: response.data[2].url}));
         axios.get('https://www.jalirani.com/files/barstool.json') //comment_count
-            .then(response => this.setState({ comment_count: response.data[0].comment_count}));
+            .then(response => this.setState({ comment_count: response.data[2].comment_count}));
     }
     
     
@@ -64,4 +64,4 @@ class FirstArticle extends React.Component {
     }
 }
 
-export { FirstArticle }; 
+export { ThirdArticle }; 

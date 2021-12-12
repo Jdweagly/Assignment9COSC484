@@ -32,7 +32,7 @@ class GetRequest extends React.Component {
        // const { id2 } = this.state.id2;
         return (
             <div className="card text-center m-3">
-                <h5 className="card-header">{title}</h5>
+                <a href="https://www.google.com">{title}</a>
                 <div className="card-body">
                     ID: {id}
                     <p></p>

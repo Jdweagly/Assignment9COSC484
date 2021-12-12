@@ -42,11 +42,14 @@ class FirstArticle extends React.Component {
             <div className="card text-center m-3">
                 <a href={url}>{title}</a>
                 <div className="card-body">
+                <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="An image"/>
+                    <p></p>
                     ID: {id}
                     <p></p>
                     Author: {author}
                     <p></p>
                     Comment Count: {comment_count}
+                    
                 </div>
             </div>
         );

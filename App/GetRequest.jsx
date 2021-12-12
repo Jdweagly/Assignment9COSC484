@@ -12,8 +12,13 @@ class GetRequest extends React.Component {
 
     componentDidMount() {
         // Simple GET request using axios
-        axios.get('https://api.npms.io/v2/search?q=react')
-            .then(response => this.setState({ totalReactPackages: response.data.total }));
+        //axios.get('https://www.jalirani.com/files/barstool.json').then(resp => {
+
+   // console.log(resp.data[0].id);
+//});
+        axios.get('https://www.jalirani.com/files/barstool.json')
+            .then(response => this.setState({ totalReactPackages: response.data[0].id}));
+            
     }
 
     render() {
@@ -22,7 +27,7 @@ class GetRequest extends React.Component {
             <div className="card text-center m-3">
                 <h5 className="card-header">Simple GET Request</h5>
                 <div className="card-body">
-                    Total react packages: {totalReactPackages}
+                    JSON ID: {totalReactPackages}
                 </div>
             </div>
         );

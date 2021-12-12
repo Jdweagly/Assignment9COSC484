@@ -7,7 +7,8 @@ class GetRequest extends React.Component {
 
         this.state = {
             id: null,
-            title: null
+            title: null,
+            author: null
         };
         
     }
@@ -18,6 +19,8 @@ class GetRequest extends React.Component {
             .then(response => this.setState({ id: response.data[0].id}));
        axios.get('https://www.jalirani.com/files/barstool.json')
          .then(response => this.setState({ title: response.data[0].title}));
+         axios.get('https://www.jalirani.com/files/barstool.json')
+         .then(response => this.setState({ author: response.data[0].author.name}));
     }
     
     
@@ -25,6 +28,7 @@ class GetRequest extends React.Component {
     render() {
         const { id } = this.state;
         const { title } = this.state;
+        const { author } = this.state;
        // const { id2 } = this.state.id2;
         return (
             <div className="card text-center m-3">
@@ -32,7 +36,7 @@ class GetRequest extends React.Component {
                 <div className="card-body">
                     ID: {id}
                     <p></p>
-                    Title: {title}
+                    Author: {author}
                 </div>
             </div>
         );

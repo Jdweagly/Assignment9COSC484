@@ -6,28 +6,33 @@ class GetRequest extends React.Component {
         super(props);
 
         this.state = {
-            totalReactPackages: null
+            id: null,
+            title: null
         };
+        
     }
 
     componentDidMount() {
         // Simple GET request using axios
-        //axios.get('https://www.jalirani.com/files/barstool.json').then(resp => {
-
-   // console.log(resp.data[0].id);
-//});
         axios.get('https://www.jalirani.com/files/barstool.json')
-            .then(response => this.setState({ totalReactPackages: response.data[0].id}));
-            
+            .then(response => this.setState({ id: response.data[0].id}));
+       axios.get('https://www.jalirani.com/files/barstool.json')
+         .then(response => this.setState({ title: response.data[0].title}));
     }
+    
+    
 
     render() {
-        const { totalReactPackages } = this.state;
+        const { id } = this.state;
+        const { title } = this.state;
+       // const { id2 } = this.state.id2;
         return (
             <div className="card text-center m-3">
-                <h5 className="card-header">Simple GET Request</h5>
+                <h5 className="card-header">{title}</h5>
                 <div className="card-body">
-                    JSON ID: {totalReactPackages}
+                    ID: {id}
+                    <p></p>
+                    Title: {title}
                 </div>
             </div>
         );

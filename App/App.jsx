@@ -1,4 +1,5 @@
 import React from 'react';
+import { FirstArticle } from '../App/FirstArticle';
 
 import {
   GetRequest,
@@ -14,6 +15,7 @@ class App extends React.Component {
       <div>
         <h3 className="p-3 text-center">Assignment9</h3>
         <ul>
+        <FirstArticle />
         <GetRequest />
         <GetRequestHooks />
         <GetRequestAsyncAwait />
